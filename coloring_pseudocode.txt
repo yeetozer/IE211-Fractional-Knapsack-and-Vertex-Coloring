@@ -1,0 +1,16 @@
+Pseudocode for Vertex Coloring Algorithm:
+
+Input: Graph G = (V, E) with vertices V and adjacency list adj
+Output: Color assignments for each vertex using a minimum number of colors
+
+1. Initialize colorassigned = [-1] * V (no colors assigned)
+2. Assign the first vertex color 0: colorassigned[0] = 0
+3. For each vertex i from 1 to V-1:
+    a. Initialize usable = [False] * V (colors in use by neighbors)
+    b. For each adjacent vertex j of i:
+        - If colorassigned[j] != -1:
+            - Mark usable[colorassigned[j]] = True
+    c. Find the first unused color (lowest index where usable[color] == False)
+    d. Assign that color to vertex i
+    e. Reset usable for next vertex
+4. Output the colorassigned list

@@ -1,0 +1,16 @@
+Pseudocode for Fractional Knapsack Problem:
+
+Input: n number of items with (value, volume), and a max volume capacity
+Output: List of selected items (whole or fractional) to maximize total value
+
+1. Sort the items by value-to-weight ratio in decreasing order
+2. Initialize: selected = [], remaining_volume = maxvolume, totalvalue = 0
+3. For each item in the sorted list:
+    a. If remaining_volume >= item.volume:
+        - Add the full item to selected
+        - Subtract item.volume from remaining_volume
+    b. Else:
+        - Calculate the fraction that fits: fraction = remaining_volume / item.volume
+        - Add the fractional item to selected
+        - Break the loop (knapsack is full)
+4. Return the selected items list
